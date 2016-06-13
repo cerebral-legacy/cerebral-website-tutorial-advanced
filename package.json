@@ -1,0 +1,28 @@
+{
+  "name": "cerebral-website-tutorial-advanced",
+  "version": "0.1.0",
+  "description": "Example app for Cerebral website tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerebral/cerebral-website-tutorial-advanced.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cerebral/cerebral-website-tutorial-advanced/issues"
+  },
+  "homepage": "https://github.com/cerebral/cerebral-website-tutorial-advanced#readme",
+  "dependencies": {
+    "cerebral": "^0.34.2",
+    "cerebral-model-immutable": "^0.1.0",
+    "cerebral-module-http": "^0.2.0",
+    "cerebral-module-router": "^0.14.4",
+    "cerebral-provider-modules": "^0.1.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
