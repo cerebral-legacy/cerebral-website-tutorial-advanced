@@ -3,6 +3,7 @@ import addItem from '../actions/addItem.js'
 import postItem from '../actions/postItem.js'
 import removeItem from '../actions/removeItem.js'
 import updateItem from '../actions/updateItem.js'
+import storeItems from '../../LocalStorage/actions/storeItems'
 
 export default [
   addItem,
@@ -16,5 +17,6 @@ export default [
       removeItem
     ]
   },
-  set('state:/app.isSaving', false)
+  set('state:/app.isSaving', false),
+  storeItems
 ]
