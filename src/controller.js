@@ -4,11 +4,13 @@ import Devtools from 'cerebral-module-devtools'
 import Http from 'cerebral-module-http'
 import Router from 'cerebral-module-router'
 import App from './modules/App'
+import LocalStorage from './modules/LocalStorage'
 
 const controller = Controller(Model({}))
 
 controller.addModules({
   app: App,
+  localStorage: LocalStorage,
 
   http: Http(),
   router: Router({
