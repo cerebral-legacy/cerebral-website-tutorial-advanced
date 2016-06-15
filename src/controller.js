@@ -6,6 +6,7 @@ import Http from 'cerebral-module-http'
 import Router from 'cerebral-module-router'
 import App from './modules/App'
 import LocalStorage from './modules/LocalStorage'
+import Filters from './modules/Filters'
 
 const controller = Controller(Model({}))
 controller.addContextProvider(ModulesProvider)
@@ -13,6 +14,7 @@ controller.addContextProvider(ModulesProvider)
 controller.addModules({
   app: App,
   localStorage: LocalStorage,
+  filters: Filters,
 
   http: Http(),
   router: Router({
