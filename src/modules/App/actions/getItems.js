@@ -1,4 +1,4 @@
-function getItems({ services }) {
+function getItems({services, output}) {
   services.http.get('/items')
     .then(output.success)
     .catch(output.error)

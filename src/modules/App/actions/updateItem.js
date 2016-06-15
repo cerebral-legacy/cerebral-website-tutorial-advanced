@@ -1,5 +1,5 @@
-function updateItem({input, state}) {
-  state.merge('items.0', input.result)
+function updateItem({input, module}) {
+  module.merge(`items.${input.newId}`, input.result)
 }
 
 export default updateItem;
