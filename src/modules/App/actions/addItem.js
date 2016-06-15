@@ -1,6 +1,6 @@
-function addItem({ state }) {
-  state.unshift('app.items', {
-    title: state.get('app.newItemTitle')
+function addItem({ module }) {
+  module.unshift('items', {
+    title: module.get('newItemTitle')
   })
 }
 
