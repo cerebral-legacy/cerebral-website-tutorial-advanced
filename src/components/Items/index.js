@@ -10,7 +10,9 @@ class Items extends React.Component {
   render() {
     return (
       <ul>
-        {Object.keys(this.props.items).map(key => <Item key={key} itemKey={key}) />)}
+        {Object.keys(this.props.items).map(key => (
+          <Item key={key} itemKey={key}) />
+        ))}
       </ul>
     );
   }
