@@ -13,9 +13,9 @@ controller.addContextProvider(ModulesProvider)
 
 controller.addModules({
   app: App,
-  localStorage: LocalStorage,
   filters: Filters,
 
+  localStorage: LocalStorage,
   http: Http(),
   router: Router({
     '/': 'filter.allClicked',
