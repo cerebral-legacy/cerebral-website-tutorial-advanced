@@ -1,5 +1,5 @@
 import newItemTitleChanged from './signals/newItemTitleChanged'
-import newItemSubmitted from './signals/newItemSubmitted'
+import newItemTitleSubmitted from './signals/newItemTitleSubmitted'
 import itemCompletedToggled from './signals/itemCompletedToggled'
 
 export default module => {
@@ -7,7 +7,8 @@ export default module => {
   module.addState({
     items: [],
     newItemTitle: '',
-    isSaving: false
+    isLoadingItems: false,
+    error: null
   })
 
   module.addSignals({
@@ -15,7 +16,7 @@ export default module => {
       chain: newItemTitleChanged,
       immediate: true
     },
-    newItemSubmitted,
+    newItemTitleSubmitted,
     itemCompletedToggled
   })
 
