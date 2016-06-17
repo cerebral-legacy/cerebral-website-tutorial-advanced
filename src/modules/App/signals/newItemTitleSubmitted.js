@@ -15,13 +15,13 @@ export default [
       setItemSaving(true),
       postItem, {
         success: [
-          updateItem
+          updateItem,
+          setItemSaving(false)
         ],
         error: [
           removeItem
         ]
       },
-      setItemSaving(false),
       storeItemsInLocalStorage
     ],
     false: []
