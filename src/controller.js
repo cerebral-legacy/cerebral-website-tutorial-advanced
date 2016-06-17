@@ -18,9 +18,9 @@ controller.addModules({
   localStorage: LocalStorage,
   http: Http(),
   router: Router({
-    '/': 'filter.allClicked',
-    '/active': 'filter.activeClicked',
-    '/completed': 'filter.completedClicked'
+    '/': 'filters.allClicked',
+    '/active': 'filters.activeClicked',
+    '/completed': 'filters.completedClicked'
   }, {
     onlyHash: true
   }),

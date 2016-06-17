@@ -3,7 +3,7 @@ import addItem from '../actions/addItem.js'
 import postItem from '../actions/postItem.js'
 import removeItem from '../actions/removeItem.js'
 import updateItem from '../actions/updateItem.js'
-import storeItemsInLocalStorage from '../storeItemsInLocalStorage'
+import storeItemsInLocalStorage from '../actions/storeItemsInLocalStorage'
 
 export default [
   addItem,

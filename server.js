@@ -35,7 +35,7 @@ function createCallback(shouldFail, cb) {
 var failCount = 0
 function respondWithPossibleFail(data, cb) {
   failCount++
-  let shouldFail = false
+  var shouldFail = false
   if (failCount === 3) {
     shouldFail = true
     failCount = 0
