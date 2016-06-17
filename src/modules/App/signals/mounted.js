@@ -6,6 +6,7 @@ import storeItemsInLocalStorage from '../actions/storeItemsInLocalStorage'
 
 export default [
   retrieveItemsFromLocalStorage,
+  setItems,
   set('state:/app.isLoadingItems', true),
   httpGet('/items'), {
     success: [
