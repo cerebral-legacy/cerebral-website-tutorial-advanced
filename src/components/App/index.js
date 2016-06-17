@@ -7,7 +7,7 @@ import Items from '../Items'
 })
 class App extends React.Component {
   componentDidMount() {
-    this.props.signals.app.appMounted()
+    this.props.signals.app.mounted()
   }
   onFormSubmit(event) {
     event.preventDefault()
