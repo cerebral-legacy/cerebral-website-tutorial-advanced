@@ -9,7 +9,6 @@ import LocalStorage from './modules/LocalStorage'
 import Filters from './modules/Filters'
 
 const controller = Controller(Model({}))
-controller.addContextProvider(ModulesProvider)
 
 controller.addModules({
   app: App,
@@ -26,5 +25,7 @@ controller.addModules({
   }),
   devtools: Devtools()
 })
+
+controller.addContextProvider(ModulesProvider)
 
 export default controller
