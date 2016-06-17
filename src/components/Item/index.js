@@ -17,6 +17,14 @@ class Item extends React.Component {
           disabled={this.props.item.$isSaving}
         />
         {this.props.item.title}
+        <button
+          disabled={this.props.item.$isSaving}
+          onClick={() => this.props.signals.app.removeItemClicked({
+            key: this.props.itemKey
+          })}
+        >
+          remove
+        </button>
       </li>
     );
   }
