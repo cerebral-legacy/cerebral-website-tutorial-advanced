@@ -1,16 +1,16 @@
 import React from 'react';
 import {Decorator as Cerebral} from 'cerebral-view-react';
-import filteredItems from '../../computed/filteredItems'
+import filteredAndSortedItemKeys from '../../computed/filteredAndSortedItemKeys'
 import Item from '../Item'
 
 @Cerebral({
-  items: filteredItems
+  itemKeys: filteredAndSortedItemKeys
 })
 class Items extends React.Component {
   render() {
     return (
       <ul>
-        {Object.keys(this.props.items).map(key => (
+        {this.props.itemKeys.map(key => (
           <Item key={key} itemKey={key} />
         ))}
       </ul>
