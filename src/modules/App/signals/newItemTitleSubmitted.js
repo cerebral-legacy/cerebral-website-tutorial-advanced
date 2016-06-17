@@ -8,7 +8,7 @@ import storeItemsInLocalStorage from '../actions/storeItemsInLocalStorage'
 import setItemSaving from '../factories/setItemSaving'
 
 export default [
-  when('input:/title'), {
+  when('state:/app.newItemTitle'), {
     true: [
       addItem,
       set('state:/app.newItemTitle', ''),
