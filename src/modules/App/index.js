@@ -2,6 +2,7 @@ import newItemTitleChanged from './signals/newItemTitleChanged'
 import newItemTitleSubmitted from './signals/newItemTitleSubmitted'
 import itemCompletedToggled from './signals/itemCompletedToggled'
 import mounted from './signals/mounted'
+import removeItemClicked from './signals/removeItemClicked'
 
 export default module => {
 
@@ -19,7 +20,8 @@ export default module => {
     },
     newItemTitleSubmitted,
     itemCompletedToggled,
-    mounted
+    mounted,
+    removeItemClicked
   })
 
 }
