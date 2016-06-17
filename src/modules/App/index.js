@@ -1,6 +1,7 @@
 import newItemTitleChanged from './signals/newItemTitleChanged'
 import newItemTitleSubmitted from './signals/newItemTitleSubmitted'
 import itemCompletedToggled from './signals/itemCompletedToggled'
+import mounted from './signals/mounted'
 
 export default module => {
 
@@ -17,7 +18,8 @@ export default module => {
       immediate: true
     },
     newItemTitleSubmitted,
-    itemCompletedToggled
+    itemCompletedToggled,
+    mounted
   })
 
 }
