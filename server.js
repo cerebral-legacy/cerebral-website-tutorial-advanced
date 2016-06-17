@@ -44,7 +44,9 @@ function respondWithPossibleFail(cb) {
 }
 
 app.get('/items', function (req, res) {
-  res.send(items)
+  setTimeout(function () {
+    res.send(items)
+  }, 1000)
 })
 
 app.post('/items', function (req, res) {
