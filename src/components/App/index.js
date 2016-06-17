@@ -6,6 +6,9 @@ import Items from '../Items'
   newItemTitle: 'app.newItemTitle'
 })
 class App extends React.Component {
+  componentDidMount() {
+    this.props.signals.app.appMounted()
+  }
   onFormSubmit(event) {
     event.preventDefault()
     this.props.signals.app.newItemTitleSubmitted()
