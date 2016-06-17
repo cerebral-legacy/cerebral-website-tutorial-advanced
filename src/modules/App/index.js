@@ -5,7 +5,7 @@ import itemCompletedToggled from './signals/itemCompletedToggled'
 export default module => {
 
   module.addState({
-    items: [],
+    items: {},
     newItemTitle: '',
     isLoadingItems: false,
     error: null

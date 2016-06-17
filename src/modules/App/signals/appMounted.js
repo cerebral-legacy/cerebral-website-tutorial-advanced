@@ -1,10 +1,13 @@
 import httpGet from 'cerebral-module-http/get'
 import set from 'cerebral-addons/set'
 import setItems from '../actions/setItems'
+import retrieveItemsFromLocalStorage from '../actions/retrieveItemsFromLocalStorage'
+import storeItemsInLocalStorage from '../actions/storeItemsInLocalStorage'
 
 export default [
+  retrieveItemsFromLocalStorage,
   set('state:/app.isLoadingItems', true),
-  httpGet, {
+  httpGet('/items'), {
     success: [
       setItems
     ],
@@ -12,5 +15,6 @@ export default [
       set('state:/app.error', 'Could not load the items')
     ]
   },
-  set('state:/app.isLoadingItems', false)
+  set('state:/app.isLoadingItems', false),
+  storeItemsInLocalStorage
 ]
