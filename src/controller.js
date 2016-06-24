@@ -9,22 +9,23 @@ import LocalStorage from './modules/LocalStorage'
 import Filters from './modules/Filters'
 
 const controller = Controller(Model({}))
-controller.addContextProvider(ModulesProvider)
 
 controller.addModules({
   app: App,
-  localStorage: LocalStorage,
   filters: Filters,
 
+  localStorage: LocalStorage,
   http: Http(),
   router: Router({
-    '/': 'filter.allClicked',
-    '/active': 'filter.activeClicked',
-    '/completed': 'filter.completedClicked'
+    '/': 'filters.allClicked',
+    '/active': 'filters.activeClicked',
+    '/completed': 'filters.completedClicked'
   }, {
     onlyHash: true
   }),
   devtools: Devtools()
 })
+
+controller.addContextProvider(ModulesProvider)
 
 export default controller

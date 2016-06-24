@@ -6,7 +6,7 @@ function setItems({ input, module }) {
     return allItems
   }, {})
 
-  module.set('items', items)
+  module.state.set('items', items)
 }
 
 export default setItems

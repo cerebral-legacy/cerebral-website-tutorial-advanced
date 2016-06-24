@@ -1,15 +1,16 @@
 import uuid from 'uuid'
 
 function addItem({module, output}) {
-  const newId = uuid.v4()
+  const key = uuid.v4()
 
-  module.set(`items.${newId}`, {
-    title: module.get('newItemTitle'),
+  module.state.set(`items.${key}`, {
+    title: module.state.get('newItemTitle'),
     completed: false,
-    datetime: Date.now()
+    datetime: Date.now(),
+    $isSaved: false
   })
 
-  output({ newId })
+  output({key})
 }
 
 export default addItem

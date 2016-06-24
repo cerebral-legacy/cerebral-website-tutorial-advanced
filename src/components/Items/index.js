@@ -1,12 +1,12 @@
 import {Component, h} from 'cerebral-view-snabbdom'
-import filteredItems from '../../computed/filteredItems'
+import filteredAndSortedItemKeys from '../../computed/filteredAndSortedItemKeys'
 import Item from '../Item'
 
 export default Component('Items', {
-  items: filteredItems
+  itemKeys: filteredAndSortedItemKeys
 }, props => (
   h('ul',
-    Object.keys(props.items).map(key => (
+    props.itemKeys.map(key => (
       Item({
         key,
         itemKey: key
