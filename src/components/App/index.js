@@ -1,5 +1,6 @@
 import React from 'react';
 import {Decorator as Cerebral} from 'cerebral-view-react';
+import Filters from '../Filters'
 import Items from '../Items'
 
 @Cerebral({
@@ -21,6 +22,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <Filters />
+        <br />
         <form onSubmit={event => this.onFormSubmit(event)}>
           <input
             autoFocus
