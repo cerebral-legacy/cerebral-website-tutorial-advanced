@@ -29,7 +29,7 @@
     "cerebral-model-immutable": "^0.1.0",
     "cerebral-module-devtools": "^0.7.0-rc.2",
     "cerebral-module-http": "^0.2.0",
-    "cerebral-module-router": "^0.14.4",
+    "cerebral-module-router": "^0.14.5",
     "cerebral-provider-modules": "^0.1.2",
     "cerebral-view-react": "^0.11.18",
     "express": "^4.13.4",
