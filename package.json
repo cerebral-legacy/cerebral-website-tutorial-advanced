@@ -31,7 +31,7 @@
     "cerebral-module-http": "^0.2.0",
     "cerebral-module-router": "^0.14.5",
     "cerebral-provider-modules": "^0.1.2",
-    "cerebral-view-react": "^0.11.18",
+    "cerebral-view-react": "^0.12.0-beta.3",
     "express": "^4.13.4",
     "html-webpack-plugin": "^2.21.0",
     "react": "^15.1.0",
