@@ -1,5 +1,5 @@
-import set from 'cerebral-addons/set'
+import {set} from 'cerebral/operators'
 
 export default [
-  set('state:/filters.current', 'all')
+  set('state:filters.current', 'all')
 ]
