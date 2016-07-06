@@ -1,10 +1,9 @@
 import React from 'react';
 import {connect} from 'cerebral-view-react';
 
-export default connect(
-  {
-    currentFilter: 'filters.current'
-  },
+export default connect({
+  currentFilter: 'filters.current'
+},
   function Filters(props) {
     return (
       <div>

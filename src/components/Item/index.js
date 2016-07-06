@@ -1,10 +1,9 @@
 import React from 'react';
 import {connect} from 'cerebral-view-react';
 
-export default connect(
-  props => ({
-    item: `app.items.${props.itemKey}`
-  }),
+export default connect(props => ({
+  item: `app.items.${props.itemKey}`
+}),
   function Item(props) {
     return (
       <li>

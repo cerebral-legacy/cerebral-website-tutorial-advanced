@@ -1,4 +1,4 @@
-import computed from 'cerebral-computed'
+import {Computed} from 'cerebral'
 
 function sortByDatetime(a, b) {
   if (a.item.datetime > b.item.datetime) {
@@ -9,7 +9,7 @@ function sortByDatetime(a, b) {
   return 0
 }
 
-export default computed({
+export default Computed({
   items: 'app.items',
   filter: 'filters.current'
 }, state => {

@@ -3,10 +3,9 @@ import {connect} from 'cerebral-view-react';
 import filteredAndSortedItemKeys from '../../computed/filteredAndSortedItemKeys'
 import Item from '../Item'
 
-export default connect(
-  {
-    itemKeys: filteredAndSortedItemKeys
-  },
+export default connect({
+  itemKeys: filteredAndSortedItemKeys
+},
   function Items(props) {
     return (
       <ul>
