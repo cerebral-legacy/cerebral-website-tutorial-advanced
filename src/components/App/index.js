@@ -1,10 +1,11 @@
 import React from 'react';
-import {Decorator as Cerebral} from 'cerebral-view-react';
+import {connect} from 'cerebral-view-react';
 import Filters from '../Filters'
 import Items from '../Items'
 
-@Cerebral({
-  newItemTitle: 'app.newItemTitle'
+@connect({
+  newItemTitle: 'app.newItemTitle',
+  error: 'app.error'
 })
 class App extends React.Component {
   componentDidMount() {
@@ -30,6 +31,12 @@ class App extends React.Component {
             value={this.props.newItemTitle}
             onChange={event => this.onInputChange(event)}
           />
+          {
+            this.props.error ?
+              <span style={{color: 'red', paddingLeft: '10px'}}>{this.props.error}</span>
+            :
+              null
+          }
         </form>
         <Items />
       </div>

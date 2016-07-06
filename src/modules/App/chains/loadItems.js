@@ -13,7 +13,7 @@ export default [
       setItems
     ],
     error: [
-      set('state:/app.error', 'Could not load the items')
+      set('state:/app.error', 'Could not load the items, try again')
     ]
   },
   set('state:/app.isLoadingItems', false),

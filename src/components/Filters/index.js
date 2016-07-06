@@ -1,34 +1,32 @@
 import React from 'react';
-import {Decorator as Cerebral} from 'cerebral-view-react';
+import {connect} from 'cerebral-view-react';
 
-@Cerebral({
-  currentFilter: 'filters.current'
-})
-class Filters extends React.Component {
-  render() {
+export default connect(
+  {
+    currentFilter: 'filters.current'
+  },
+  function Filters(props) {
     return (
       <div>
         <button
-          style={{textDecoration: this.props.currentFilter === 'all' ? 'underline': 'none'}}
-          onClick={() => this.props.signals.filters.allClicked()}
+          style={{textDecoration: props.currentFilter === 'all' ? 'underline': 'none'}}
+          onClick={() => props.signals.filters.allClicked()}
         >
           All
         </button>
         <button
-          style={{textDecoration: this.props.currentFilter === 'active' ? 'underline': 'none'}}
-          onClick={() => this.props.signals.filters.activeClicked()}
+          style={{textDecoration: props.currentFilter === 'active' ? 'underline': 'none'}}
+          onClick={() => props.signals.filters.activeClicked()}
         >
           Active
         </button>
         <button
-          style={{textDecoration: this.props.currentFilter === 'completed' ? 'underline': 'none'}}
-          onClick={() => this.props.signals.filters.completedClicked()}
+          style={{textDecoration: props.currentFilter === 'completed' ? 'underline': 'none'}}
+          onClick={() => props.signals.filters.completedClicked()}
         >
           Completed
         </button>
       </div>
-    );
+    )
   }
-}
-
- export default Filters;
+)

@@ -12,6 +12,7 @@ export default [
     true: [
       addItem,
       set('state:/app.newItemTitle', ''),
+      set('state:/app.error', null),
       setItemSaving(true),
       postItem, {
         success: [
@@ -19,7 +20,8 @@ export default [
           setItemSaving(false)
         ],
         error: [
-          removeItem
+          removeItem,
+          set('state:/app.error', 'Could not add item on server, try again')
         ]
       },
       storeItemsInLocalStorage

@@ -1,33 +1,31 @@
 import React from 'react';
-import {Decorator as Cerebral} from 'cerebral-view-react';
+import {connect} from 'cerebral-view-react';
 
-@Cerebral(props => ({
-  item: `app.items.${props.itemKey}`
-}))
-class Item extends React.Component {
-  render() {
+export default connect(
+  props => ({
+    item: `app.items.${props.itemKey}`
+  }),
+  function Item(props) {
     return (
       <li>
         <input
           type="checkbox"
-          checked={this.props.item.completed}
-          onChange={() => this.props.signals.app.itemCompletedToggled({
-            key: this.props.itemKey
+          checked={props.item.completed}
+          onChange={() => props.signals.app.itemCompletedToggled({
+            key: props.itemKey
           })}
-          disabled={this.props.item.$isSaving}
+          disabled={props.item.$isSaving}
         />
-          {` ${this.props.item.title} `}
+          {` ${props.item.title} `}
         <button
-          disabled={this.props.item.$isSaving}
-          onClick={() => this.props.signals.app.removeItemClicked({
-            key: this.props.itemKey
+          disabled={props.item.$isSaving}
+          onClick={() => props.signals.app.removeItemClicked({
+            key: props.itemKey
           })}
         >
           remove
         </button>
       </li>
-    );
+    )
   }
-}
-
- export default Item;
+)

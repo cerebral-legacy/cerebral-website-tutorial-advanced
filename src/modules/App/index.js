@@ -1,8 +1,8 @@
-import newItemTitleChanged from './signals/newItemTitleChanged'
-import newItemTitleSubmitted from './signals/newItemTitleSubmitted'
-import itemCompletedToggled from './signals/itemCompletedToggled'
-import mounted from './signals/mounted'
-import removeItemClicked from './signals/removeItemClicked'
+import changeNewItemTitle from './chains/changeNewItemTitle'
+import submitNewItemTitle from './chains/submitNewItemTitle'
+import toggleItemCompleted from './chains/toggleItemCompleted'
+import loadItems from './chains/loadItems'
+import removeItem from './chains/removeItem'
 
 export default module => {
 
@@ -15,13 +15,13 @@ export default module => {
 
   module.addSignals({
     newItemTitleChanged: {
-      chain: newItemTitleChanged,
+      chain: changeNewItemTitle,
       immediate: true
     },
-    newItemTitleSubmitted,
-    itemCompletedToggled,
-    mounted,
-    removeItemClicked
+    newItemTitleSubmitted: submitNewItemTitle,
+    itemCompletedToggled: toggleItemCompleted,
+    mounted: loadItems,
+    removeItemClicked: removeItem
   })
 
 }
