@@ -1,34 +1,36 @@
-import {Component, h} from 'cerebral-view-snabbdom'
+import {connect, h} from 'cerebral-view-snabbdom'
 
-export default Component('Filters', {
+export default connect({
   currentFilter: 'filters.current'
-}, props => {
+},
+  function Filters(props) {
 
-  return h('div', {}, [
-    h('button', {
-      style: {
-        textDecoration: props.currentFilter === 'all' ? 'underline' : 'none'
-      },
-      on: {
-        click() { props.signals.filters.allClicked() }
-      }
-    }, 'All'),
-    h('button', {
-      style: {
-        textDecoration: props.currentFilter === 'active' ? 'underline' : 'none'
-      },
-      on: {
-        click() { props.signals.filters.activeClicked() }
-      }
-    }, 'Active'),
-    h('button', {
-      style: {
-        textDecoration: props.currentFilter === 'completed' ? 'underline' : 'none'
-      },
-      on: {
-        click() { props.signals.filters.completedClicked() }
-      }
-    }, 'Completed')
-  ])
+    return h('div', {}, [
+      h('button', {
+        style: {
+          textDecoration: props.currentFilter === 'all' ? 'underline' : 'none'
+        },
+        on: {
+          click() { props.signals.filters.allClicked() }
+        }
+      }, 'All'),
+      h('button', {
+        style: {
+          textDecoration: props.currentFilter === 'active' ? 'underline' : 'none'
+        },
+        on: {
+          click() { props.signals.filters.activeClicked() }
+        }
+      }, 'Active'),
+      h('button', {
+        style: {
+          textDecoration: props.currentFilter === 'completed' ? 'underline' : 'none'
+        },
+        on: {
+          click() { props.signals.filters.completedClicked() }
+        }
+      }, 'Completed')
+    ])
 
-})
+  }
+)

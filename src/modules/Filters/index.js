@@ -1,6 +1,6 @@
-import allClicked from './signals/allClicked'
-import activeClicked from './signals/activeClicked'
-import completedClicked from './signals/completedClicked'
+import setAllFilter from './chains/setAllFilter'
+import setActiveFilter from './chains/setActiveFilter'
+import setCompletedFilter from './chains/setCompletedFilter'
 
 export default module => {
 
@@ -9,9 +9,9 @@ export default module => {
   })
 
   module.addSignals({
-    allClicked,
-    activeClicked,
-    completedClicked
+    allClicked: setAllFilter,
+    activeClicked: setActiveFilter,
+    completedClicked: setCompletedFilter
   })
 
 }

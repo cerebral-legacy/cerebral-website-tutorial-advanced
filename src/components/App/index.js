@@ -1,44 +1,56 @@
-import {Component, h} from 'cerebral-view-snabbdom'
+import {connect, h} from 'cerebral-view-snabbdom'
 import Filters from '../Filters'
 import Items from '../Items'
 
-export default Component('App', {
-  newItemTitle: 'app.newItemTitle'
-}, props => {
+export default connect({
+  newItemTitle: 'app.newItemTitle',
+  error: 'app.error'
+},
+  function App(props) {
 
-  function onFormSubmit(event) {
-    event.preventDefault()
-    props.signals.app.newItemTitleSubmitted()
-  }
-
-  function onInputChange(event) {
-    props.signals.app.newItemTitleChanged({
-      title: event.target.value
-    })
-  }
-
-  return h('div', {
-    hook: {
-      insert() { props.signals.app.mounted(); }
+    function onFormSubmit(event) {
+      event.preventDefault()
+      props.signals.app.newItemTitleSubmitted()
     }
-  }, [
-    Filters(),
-    h('br'),
-    h('form', {
-      on: {
-        submit: onFormSubmit
+
+    function onInputChange(event) {
+      props.signals.app.newItemTitleChanged({
+        title: event.target.value
+      })
+    }
+
+    return h('div', {
+      hook: {
+        insert() { props.signals.app.mounted(); }
       }
     }, [
-      h('input', {
-        props: {
-          autoFocus: true,
-          value: props.newItemTitle
-        },
+      Filters(),
+      h('br'),
+      h('form', {
         on: {
-          input: onInputChange
+          submit: onFormSubmit
         }
-      })
-    ]),
-    Items()
-  ])
-});
+      }, [
+        h('input', {
+          props: {
+            autoFocus: true,
+            value: props.newItemTitle
+          },
+          on: {
+            input: onInputChange
+          }
+        }),
+        props.error ?
+          h('span', {
+            style: {
+              color: 'red',
+              paddingLeft: '10px'
+            }
+          }, props.error)
+        :
+          ''
+      ]),
+      Items()
+    ])
+  }
+)
