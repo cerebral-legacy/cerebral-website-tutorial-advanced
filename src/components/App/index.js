@@ -1,5 +1,6 @@
-import React from 'react';
-import {connect} from 'cerebral-view-react';
+import Inferno from 'inferno';
+import Component from 'inferno-component'
+import {connect} from 'cerebral-view-inferno'
 import Filters from '../Filters'
 import Items from '../Items'
 
@@ -7,7 +8,7 @@ export default connect({
   newItemTitle: 'app.newItemTitle',
   error: 'app.error'
 },
-  class App extends React.Component {
+  class App extends Component {
     componentDidMount() {
       this.props.signals.app.mounted()
     }

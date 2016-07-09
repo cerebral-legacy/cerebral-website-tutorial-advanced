@@ -18,8 +18,8 @@
   "homepage": "https://github.com/cerebral/cerebral-website-tutorial-advanced#readme",
   "dependencies": {
     "babel-loader": "^6.2.4",
+    "babel-plugin-inferno": "^0.7.6",
     "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "body-parser": "^1.15.1",
     "cerebral": "^0.35.0-beta.5",
@@ -28,7 +28,7 @@
     "cerebral-module-http": "^0.2.0",
     "cerebral-module-router": "^0.14.5",
     "cerebral-provider-modules": "^0.1.2",
-    "cerebral-view-react": "^0.12.0-beta.7",
+    "cerebral-view-inferno": "^1.0.2",
     "express": "^4.13.4",
     "html-webpack-plugin": "^2.21.0",
     "react": "^15.1.0",

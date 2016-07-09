@@ -1,5 +1,5 @@
-import React from 'react';
-import {connect} from 'cerebral-view-react';
+import Inferno from 'inferno'
+import {connect} from 'cerebral-view-inferno'
 import filteredAndSortedItemKeys from '../../computed/filteredAndSortedItemKeys'
 import Item from '../Item'
 
