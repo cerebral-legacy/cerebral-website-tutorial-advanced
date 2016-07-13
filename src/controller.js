@@ -1,5 +1,5 @@
 import {Controller} from 'cerebral'
-import Model from 'cerebral-model-immutable'
+import Model from 'cerebral/models/immutable'
 import ModulesProvider from 'cerebral-provider-modules'
 import Devtools from 'cerebral-module-devtools'
 import Http from 'cerebral-module-http'
@@ -15,7 +15,9 @@ controller.addModules({
   filters: Filters,
 
   localStorage: LocalStorage,
-  http: Http(),
+  http: Http({
+    baseURL: '/api'
+  }),
   router: Router({
     '/': 'filters.allClicked',
     '/active': 'filters.activeClicked',
