@@ -1,27 +1,8 @@
 const express = require('express')
-const webpackMiddleware = require('webpack-dev-middleware')
 const app = express()
-const webpack = require('webpack')
-const webpackConfig = require('./webpack.config')
-const port = process.env.NODE_ENV === 'production' ? process.env.PORT : 8080
+const port = process.env.NODE_ENV === 'production' ? process.env.PORT : 3001
 const bodyParser = require('body-parser')
 
-if (process.env.NODE_ENV !== 'production') {
-  const compiler = webpack(webpackConfig)
-  const middleware = webpackMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    contentBase: 'src',
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
-  });
-  app.use(middleware)
-}
 app.use(bodyParser.json())
 
 const items = []
@@ -43,13 +24,13 @@ function respondWithPossibleFail(cb) {
   setTimeout(createCallback(shouldFail, cb), 1000)
 }
 
-app.get('/items', function (req, res) {
+app.get('/api/items', function (req, res) {
   setTimeout(function () {
     res.send(items)
   }, 1000)
 })
 
-app.post('/items', function (req, res) {
+app.post('/api/items', function (req, res) {
   respondWithPossibleFail(function (shouldFail) {
     if (shouldFail) {
       res.sendStatus(500)
@@ -68,7 +49,7 @@ app.post('/items', function (req, res) {
   })
 })
 
-app.patch('/items/:id', function (req, res) {
+app.patch('/api/items/:id', function (req, res) {
   respondWithPossibleFail(function (shouldFail) {
     if (shouldFail) {
       res.sendStatus(500)
@@ -82,7 +63,7 @@ app.patch('/items/:id', function (req, res) {
   })
 })
 
-app.delete('/items/:id', function (req, res) {
+app.delete('/api/items/:id', function (req, res) {
   respondWithPossibleFail(function (shouldFail) {
     if (shouldFail) {
       res.sendStatus(500)

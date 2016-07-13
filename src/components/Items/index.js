@@ -4,7 +4,7 @@ import filteredAndSortedItemKeys from '../../computed/filteredAndSortedItemKeys'
 import Item from '../Item'
 
 export default connect({
-  itemKeys: filteredAndSortedItemKeys
+  itemKeys: filteredAndSortedItemKeys()
 },
   function Items(props) {
     return (
