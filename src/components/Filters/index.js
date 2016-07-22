@@ -2,6 +2,10 @@ import {connect, h} from 'cerebral-view-snabbdom'
 
 export default connect({
   currentFilter: 'filters.current'
+}, {
+  allClicked: 'filters.allClicked',
+  activeClicked: 'filters.activeClicked',
+  completedClicked: 'filters.completedClicked'
 },
   function Filters(props) {
 
@@ -11,7 +15,7 @@ export default connect({
           textDecoration: props.currentFilter === 'all' ? 'underline' : 'none'
         },
         on: {
-          click() { props.signals.filters.allClicked() }
+          click() { props.allClicked() }
         }
       }, 'All'),
       h('button', {
@@ -19,7 +23,7 @@ export default connect({
           textDecoration: props.currentFilter === 'active' ? 'underline' : 'none'
         },
         on: {
-          click() { props.signals.filters.activeClicked() }
+          click() { props.activeClicked() }
         }
       }, 'Active'),
       h('button', {
@@ -27,7 +31,7 @@ export default connect({
           textDecoration: props.currentFilter === 'completed' ? 'underline' : 'none'
         },
         on: {
-          click() { props.signals.filters.completedClicked() }
+          click() { props.completedClicked() }
         }
       }, 'Completed')
     ])

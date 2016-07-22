@@ -5,23 +5,27 @@ import Items from '../Items'
 export default connect({
   newItemTitle: 'app.newItemTitle',
   error: 'app.error'
+}, {
+  newItemTitleSubmitted: 'app.newItemTitleSubmitted',
+  newItemTitleChanged: 'app.newItemTitleChanged',
+  mounted: 'app.mounted'
 },
   function App(props) {
 
     function onFormSubmit(event) {
       event.preventDefault()
-      props.signals.app.newItemTitleSubmitted()
+      props.newItemTitleSubmitted()
     }
 
     function onInputChange(event) {
-      props.signals.app.newItemTitleChanged({
+      props.newItemTitleChanged({
         title: event.target.value
       })
     }
 
     return h('div', {
       hook: {
-        insert() { props.signals.app.mounted(); }
+        insert() { props.mounted(); }
       }
     }, [
       Filters(),

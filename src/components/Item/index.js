@@ -2,17 +2,20 @@ import {connect, h} from 'cerebral-view-snabbdom'
 
 export default connect(props => ({
   item: `app.items.${props.itemKey}`
-}),
+}), {
+  itemCompletedToggled: 'app.itemCompletedToggled',
+  removeItemClicked: 'app.removeItemClicked'
+},
   function Item(props) {
 
     function onCheckboxToggle() {
-      props.signals.app.itemCompletedToggled({
+      props.itemCompletedToggled({
         key: props.itemKey
       })
     }
 
     function onButtonClick() {
-      props.signals.app.removeItemClicked({
+      props.removeItemClicked({
         key: props.itemKey
       })
     }
