@@ -16,7 +16,7 @@ controller.addModules({
 
   localStorage: LocalStorage,
   http: Http({
-    baseURL: '/api'
+    baseUrl: '/api'
   }),
   router: Router({
     '/': 'filters.allClicked',
