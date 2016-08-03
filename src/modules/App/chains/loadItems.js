@@ -1,4 +1,4 @@
-import httpGet from 'cerebral-module-http/get'
+import {httpGet} from 'cerebral-module-http'
 import {set} from 'cerebral/operators'
 import setItems from '../actions/setItems'
 import retrieveItemsFromLocalStorage from '../actions/retrieveItemsFromLocalStorage'
