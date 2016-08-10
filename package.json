@@ -6,6 +6,7 @@
   "scripts": {
     "client": "webpack-dev-server",
     "server": "node server",
+    "build": "webpack --config webpack.config.production.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
