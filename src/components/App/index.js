@@ -29,6 +29,7 @@ export default connect({
         <div>
           <Filters />
           <br />
+          <p>Type text and hit enter</p>
           <form onSubmit={event => this.onFormSubmit(event)}>
             <input
               autoFocus
