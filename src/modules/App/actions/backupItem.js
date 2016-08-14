@@ -1,4 +1,4 @@
-function backupItem({input, module, output}) {
+function backupItem ({input, module, output}) {
   const item = module.state.get(`items.${input.key}`)
   output({item})
 }

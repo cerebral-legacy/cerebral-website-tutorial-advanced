@@ -1,5 +1,5 @@
-function removeItem({input, module}) {
+function removeItem ({input, module}) {
   module.state.unset(`items.${input.key}`)
 }
 
-export default removeItem;
+export default removeItem

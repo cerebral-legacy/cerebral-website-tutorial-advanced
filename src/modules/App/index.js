@@ -5,7 +5,6 @@ import loadItems from './chains/loadItems'
 import removeItem from './chains/removeItem'
 
 export default module => {
-
   module.addState({
     items: {},
     newItemTitle: '',
@@ -23,5 +22,4 @@ export default module => {
     mounted: loadItems,
     removeItemClicked: removeItem
   })
-
 }

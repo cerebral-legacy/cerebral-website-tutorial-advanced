@@ -1,6 +1,6 @@
 import {Computed} from 'cerebral'
 
-function sortByDatetime(a, b) {
+function sortByDatetime (a, b) {
   if (a.item.datetime > b.item.datetime) {
     return -1
   } else if (a.item.datetime < b.item.datetime) {
@@ -13,7 +13,6 @@ export default Computed({
   items: 'app.items',
   filter: 'filters.current'
 }, state => {
-
   const sortedItems = Object.keys(state.items)
     .map(key => ({key, item: state.items[key]}))
     .sort(sortByDatetime)
@@ -29,5 +28,4 @@ export default Computed({
       .filter(data => !data.item.completed)
       .map(data => data.key)
   }
-
 })

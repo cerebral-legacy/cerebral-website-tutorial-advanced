@@ -1,4 +1,4 @@
-function patchItem({input, module, output, services}) {
+function patchItem ({input, module, output, services}) {
   const item = module.state.get(`items.${input.key}`)
 
   services.http.patch(`/items/${item.id}`, {
@@ -10,6 +10,6 @@ function patchItem({input, module, output, services}) {
 }
 
 patchItem.async = true
-patchItem.outputs = ['success', 'error'];
+patchItem.outputs = ['success', 'error']
 
-export default patchItem;
+export default patchItem

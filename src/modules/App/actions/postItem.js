@@ -1,4 +1,4 @@
-function postItem({input, module, output, services}) {
+function postItem ({input, module, output, services}) {
   const item = module.state.get(`items.${input.key}`)
 
   services.http.post('/items', {
@@ -11,6 +11,6 @@ function postItem({input, module, output, services}) {
 }
 
 postItem.async = true
-postItem.outputs = ['success', 'error'];
+postItem.outputs = ['success', 'error']
 
-export default postItem;
+export default postItem

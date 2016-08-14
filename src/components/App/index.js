@@ -1,5 +1,5 @@
-import React from 'react';
-import {connect} from 'cerebral-view-react';
+import React from 'react'
+import {connect} from 'cerebral-view-react'
 import Filters from '../Filters'
 import Items from '../Items'
 
@@ -12,19 +12,19 @@ export default connect({
   mounted: 'app.mounted'
 },
   class App extends React.Component {
-    componentDidMount() {
+    componentDidMount () {
       this.props.mounted()
     }
-    onFormSubmit(event) {
+    onFormSubmit (event) {
       event.preventDefault()
       this.props.newItemTitleSubmitted()
     }
-    onInputChange(event) {
+    onInputChange (event) {
       this.props.newItemTitleChanged({
         title: event.target.value
       })
     }
-    render() {
+    render () {
       return (
         <div>
           <Filters />
@@ -36,15 +36,14 @@ export default connect({
               onChange={event => this.onInputChange(event)}
             />
             {
-              this.props.error ?
-                <span style={{color: 'red', paddingLeft: '10px'}}>{this.props.error}</span>
-              :
-                null
+              this.props.error
+              ? <span style={{color: 'red', paddingLeft: '10px'}}>{this.props.error}</span>
+              : null
             }
           </form>
           <Items />
         </div>
-      );
+      )
     }
   }
 )

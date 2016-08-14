@@ -3,7 +3,6 @@ import setActiveFilter from './chains/setActiveFilter'
 import setCompletedFilter from './chains/setCompletedFilter'
 
 export default module => {
-
   module.addState({
     current: 'all'
   })
@@ -13,5 +12,4 @@ export default module => {
     activeClicked: setActiveFilter,
     completedClicked: setCompletedFilter
   })
-
 }

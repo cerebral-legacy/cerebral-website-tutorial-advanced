@@ -7,14 +7,14 @@ app.use(bodyParser.json())
 
 const items = []
 
-function createCallback(shouldFail, cb) {
+function createCallback (shouldFail, cb) {
   return function () {
     cb(shouldFail)
   }
 }
 
 var failCount = 0
-function respondWithPossibleFail(cb) {
+function respondWithPossibleFail (cb) {
   failCount++
   var shouldFail = false
   if (failCount === 3) {

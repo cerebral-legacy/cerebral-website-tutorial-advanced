@@ -1,5 +1,5 @@
-import React from 'react';
-import {connect} from 'cerebral-view-react';
+import React from 'react'
+import {connect} from 'cerebral-view-react'
 
 export default connect(props => ({
   item: `app.items.${props.itemKey}`
@@ -7,11 +7,11 @@ export default connect(props => ({
   itemCompletedToggled: 'app.itemCompletedToggled',
   removeItemClicked: 'app.removeItemClicked'
 },
-  function Item(props) {
+  function Item (props) {
     return (
       <li>
         <input
-          type="checkbox"
+          type='checkbox'
           checked={props.item.completed}
           onChange={() => props.itemCompletedToggled({
             key: props.itemKey

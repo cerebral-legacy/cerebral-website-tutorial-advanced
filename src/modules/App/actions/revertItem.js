@@ -1,4 +1,4 @@
-function revertItem({input, module}) {
+function revertItem ({input, module}) {
   module.state.set(`items.${input.key}`, input.item)
 }
 

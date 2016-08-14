@@ -1,6 +1,6 @@
 import uuid from 'uuid'
 
-function addItem({module, output}) {
+function addItem ({module, output}) {
   const key = uuid.v4()
 
   module.state.set(`items.${key}`, {
